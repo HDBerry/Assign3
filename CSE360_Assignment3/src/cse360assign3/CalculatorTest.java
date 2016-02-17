@@ -9,12 +9,11 @@ public class CalculatorTest {
 	@Test
 	public void testCalculator() {
 		
-		Calculator testCalc = new Calculator();
-		
+		Calculator testCalc = new Calculator();		
 		assertNotNull(testCalc);
 	}
 
-	@Test
+	@Test 
 	public void testGetTotal() {
 		
 		Calculator testCalc = new Calculator();
@@ -24,9 +23,10 @@ public class CalculatorTest {
 		
 		assertEquals(2, testCalc.getTotal());
 	}
-
+	
 	@Test
-	public void testAdd() {
+	public void testAdd() {	
+		
 		Calculator testCalc = new Calculator();
 		testCalc.add(3);
 		assertEquals(3, testCalc.getTotal());
@@ -37,6 +37,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testSubtract() {
+		
 		Calculator testCalc = new Calculator();
 		testCalc.subtract(5);
 		assertEquals(-5, testCalc.getTotal());
@@ -47,6 +48,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testMultiply() {
+		
 		Calculator testCalc = new Calculator();
 		testCalc.add(1);
 		testCalc.multiply(10);
@@ -58,6 +60,7 @@ public class CalculatorTest {
 
 	@Test
 	public void testDivide() {
+		
 		Calculator testCalc = new Calculator();
 		testCalc.add(100);
 		testCalc.divide(4);
@@ -70,10 +73,16 @@ public class CalculatorTest {
 		assertEquals(0, testCalc.getTotal()); // divide by zero check
 	}
 
-	/*@Test
+	@Test
 	public void testGetHistory() {
-		fail("Not yet implemented");
-	}*/ 
-	// voided to check other tests.
+		
+		Calculator testCalc = new Calculator();
+		testCalc.add(10);
+		assertEquals("0 + 10", testCalc.getHistory());
+		
+		testCalc.subtract(5);
+		testCalc.divide(6);
+		assertEquals("0 + 10 - 5 / 6", testCalc.getHistory());		
+	}
 
 }

@@ -12,6 +12,7 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	private String history = "0";
 	
 	/**
 	 * the constructor creates a calculator object
@@ -34,6 +35,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total = total + value;
+		history = history.concat(" + " + value);
 	}
 	
 	/**
@@ -42,6 +44,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total = total - value;
+		history = history.concat(" - " + value);
 	}
 	
 	/**
@@ -50,6 +53,7 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total = total * value;
+		history = history.concat(" * " + value);
 	}
 	
 	/**
@@ -57,10 +61,14 @@ public class Calculator {
 	 * @param value to be be divided from the total
 	 */
 	public void divide (int value) {
-		if (value == 0)
+		if (value == 0) {
 			total = 0;
-		else
+			history = history.concat(" / " + value);
+		}
+		else {
 			total = total / value;
+			history = history.concat(" / " + value);
+		}
 	}
 	
 	/**
@@ -68,6 +76,6 @@ public class Calculator {
 	 * @return a string of previous commands
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
