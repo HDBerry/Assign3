@@ -17,7 +17,7 @@ public class Calculator {
 	 * the constructor creates a calculator object
 	 */
 	public Calculator () {
-		total = 0;  // not needed - included for clarity
+		
 	}
 	
 	/**
@@ -25,7 +25,7 @@ public class Calculator {
 	 * @return the value of the total
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/**
@@ -33,7 +33,7 @@ public class Calculator {
 	 * @param value to be added to the total
 	 */
 	public void add (int value) {
-		
+		total = total + value;
 	}
 	
 	/**
@@ -41,7 +41,7 @@ public class Calculator {
 	 * @param value to be subtracted from the total
 	 */
 	public void subtract (int value) {
-		
+		total = total - value;
 	}
 	
 	/**
@@ -49,7 +49,7 @@ public class Calculator {
 	 * @param value to be multiplied with total
 	 */
 	public void multiply (int value) {
-		
+		total = total * value;
 	}
 	
 	/**
@@ -57,7 +57,10 @@ public class Calculator {
 	 * @param value to be be divided from the total
 	 */
 	public void divide (int value) {
-		
+		if (value == 0)
+			total = 0;
+		else
+			total = total / value;
 	}
 	
 	/**
