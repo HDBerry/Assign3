@@ -2,6 +2,8 @@
  * @author Dustin Rosebery
  * PIN: 721
  * 
+ * github url: https://github.com/HDBerry/Assign3.git
+ * 
  * This class performs simple arithmetic functions and is meant as an introduction to using a repository
  */
 
